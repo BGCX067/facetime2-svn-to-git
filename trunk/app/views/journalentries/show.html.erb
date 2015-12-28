@@ -1,0 +1,18 @@
+<p>
+  <b>Author:</b>
+  <%=h @journalentry.author %>
+</p>
+
+<p>
+  <b>Entrydate:</b>
+  <%=h @journalentry.entrydate %>
+</p>
+
+<p>
+  <b>Contents:</b>
+  <%=h @journalentry.contents %>
+</p>
+
+
+<%= link_to 'Edit', edit_journalentry_path(@journalentry) %> |
+<%= link_to 'Back', journalentries_path %>

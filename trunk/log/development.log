@@ -1,0 +1,279 @@
+  [4;36;1mSQL (0.000000)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.094000)[0m   [0mCREATE TABLE schema_info (version integer)[0m
+  [4;36;1mSQL (0.125000)[0m   [0;1mINSERT INTO schema_info (version) VALUES(0)[0m
+  [4;35;1mSQL (0.000000)[0m   [0mSQLite3::SQLException: table schema_info already exists: CREATE TABLE schema_info (version integer)[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSELECT version FROM schema_info[0m
+Migrating to CreateJournalentries (1)
+  [4;35;1mSQL (0.093000)[0m   [0mCREATE TABLE journalentries ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "author" varchar(255) DEFAULT NULL, "entrydate" datetime DEFAULT NULL, "contents" text DEFAULT NULL, "created_at" datetime DEFAULT NULL, "updated_at" datetime DEFAULT NULL) [0m
+  [4;36;1mSQL (0.110000)[0m   [0;1mUPDATE schema_info SET version = 1[0m
+  [4;35;1mSQL (0.000000)[0m   [0mSELECT * FROM schema_info[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.000000)[0m   [0mPRAGMA index_list(journalentries)[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2008-05-27 09:41:38) [GET]
+  Session ID: 1610a10bb0f41b0b637236b68e678645
+  Parameters: {}
+
+
+ActionController::RoutingError (No route matches "/journalentry/" with {:method=>:get}):
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/routing.rb:1441:in `recognize_path'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/routing.rb:1424:in `recognize'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:170:in `handle_request'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:115:in `dispatch'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:126:in `dispatch_cgi'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:9:in `dispatch'
+    c:/ruby/lib/ruby/gems/1.8/gems/rails-2.0.2/lib/webrick_server.rb:112:in `handle_dispatch'
+    c:/ruby/lib/ruby/gems/1.8/gems/rails-2.0.2/lib/webrick_server.rb:78:in `service'
+    c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    c:/ruby/lib/ruby/gems/1.8/gems/rails-2.0.2/lib/webrick_server.rb:62:in `dispatch'
+    c:/ruby/lib/ruby/gems/1.8/gems/rails-2.0.2/lib/commands/servers/webrick.rb:66
+    c:/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    c:/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    c:/ruby/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:496:in `require'
+    c:/ruby/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    c:/ruby/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:496:in `require'
+    c:/ruby/lib/ruby/gems/1.8/gems/rails-2.0.2/lib/commands/server.rb:39
+    c:/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    c:/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    script/server:3
+
+Rendering c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/templates/rescues/layout.erb (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2008-05-27 09:42:04) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo%0ASGFzaHsABjoKQHVzZWR7AA%3D%3D--b01e9af1ef03658e6e0465ffe8730db1755333bf
+  Parameters: {}
+
+
+ActionController::RoutingError (No route matches "/journalentrys" with {:method=>:get}):
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/routing.rb:1441:in `recognize_path'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/routing.rb:1424:in `recognize'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:170:in `handle_request'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:115:in `dispatch'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:126:in `dispatch_cgi'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:9:in `dispatch'
+    c:/ruby/lib/ruby/gems/1.8/gems/rails-2.0.2/lib/webrick_server.rb:112:in `handle_dispatch'
+    c:/ruby/lib/ruby/gems/1.8/gems/rails-2.0.2/lib/webrick_server.rb:78:in `service'
+    c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    c:/ruby/lib/ruby/gems/1.8/gems/rails-2.0.2/lib/webrick_server.rb:62:in `dispatch'
+    c:/ruby/lib/ruby/gems/1.8/gems/rails-2.0.2/lib/commands/servers/webrick.rb:66
+    c:/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    c:/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    c:/ruby/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:496:in `require'
+    c:/ruby/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    c:/ruby/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:496:in `require'
+    c:/ruby/lib/ruby/gems/1.8/gems/rails-2.0.2/lib/commands/server.rb:39
+    c:/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    c:/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    script/server:3
+
+Rendering c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/templates/rescues/layout.erb (not_found)
+
+
+Processing JournalentriesController#index (for 127.0.0.1 at 2008-05-27 09:42:53) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo%0ASGFzaHsABjoKQHVzZWR7AA%3D%3D--b01e9af1ef03658e6e0465ffe8730db1755333bf
+  Parameters: {"action"=>"index", "controller"=>"journalentries"}
+  [4;36;1mJournalentry Load (0.000000)[0m   [0;1mSELECT * FROM journalentries [0m
+Rendering template within layouts/journalentries
+Rendering journalentries/index
+Completed in 0.04600 (21 reqs/sec) | Rendering: 0.03100 (67%) | DB: 0.00000 (0%) | 200 OK [http://localhost/journalentries/]
+
+
+Processing JournalentriesController#new (for 127.0.0.1 at 2008-05-27 09:42:59) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo%0ASGFzaHsABjoKQHVzZWR7AA%3D%3D--b01e9af1ef03658e6e0465ffe8730db1755333bf
+  Parameters: {"action"=>"new", "controller"=>"journalentries"}
+Rendering template within layouts/journalentries
+Rendering journalentries/new
+Completed in 0.10900 (9 reqs/sec) | Rendering: 0.01500 (13%) | DB: 0.00000 (0%) | 200 OK [http://localhost/journalentries/new]
+
+
+Processing JournalentriesController#create (for 127.0.0.1 at 2008-05-27 09:44:17) [POST]
+  Session ID: BAh7BzoMY3NyZl9pZCIlY2I4NWQwZmFiY2IyNzdkNmUyYWJlMzI5MTg5OGM5%0ANTQiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--b702e44f0842336ee936394904ca0a888c52b264
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"eaee30a81eb103dbb67e1852c0cead74d59ae2d4", "action"=>"create", "controller"=>"journalentries", "journalentry"=>{"entrydate(1i)"=>"2008", "entrydate(2i)"=>"5", "author"=>"Jason J. Gullickson", "entrydate(3i)"=>"27", "entrydate(4i)"=>"09", "entrydate(5i)"=>"42", "contents"=>"Installed Rails, found out that I needed to install Sqlite as well but after all that finally got the migration to work and tested the scaffold version of the journal entry bits.\r\n\r\nI'm not sure how it figured out the plural for \"journalentry\"."}}
+  [4;35;1mJournalentry Create (0.000000)[0m   [0mINSERT INTO journalentries ("updated_at", "author", "entrydate", "contents", "created_at") VALUES('2008-05-27 09:44:17', 'Jason J. Gullickson', '2008-05-27 09:42:00', 'Installed Rails, found out that I needed to install Sqlite as well but after all that finally got the migration to work and tested the scaffold version of the journal entry bits.
+
+I''m not sure how it figured out the plural for "journalentry".', '2008-05-27 09:44:17')[0m
+Redirected to http://localhost:3000/journalentries/1
+Completed in 0.09400 (10 reqs/sec) | DB: 0.00000 (0%) | 302 Found [http://localhost/journalentries]
+
+
+Processing JournalentriesController#show (for 127.0.0.1 at 2008-05-27 09:44:17) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlY2I4NWQwZmFiY2IyNzdkNmUyYWJlMzI5MTg5OGM5%0ANTQiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7BjoLbm90aWNlIitKb3VybmFsZW50cnkgd2FzIHN1Y2Nlc3NmdWxseSBj%0AcmVhdGVkLgY6CkB1c2VkewY7B1Q%3D--410e8754199981868ea82dd49354f2418288c327
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"journalentries"}
+  [4;36;1mJournalentry Load (0.000000)[0m   [0;1mSELECT * FROM journalentries WHERE (journalentries."id" = 1) [0m
+Rendering template within layouts/journalentries
+Rendering journalentries/show
+Completed in 0.03100 (32 reqs/sec) | Rendering: 0.01500 (48%) | DB: 0.00000 (0%) | 200 OK [http://localhost/journalentries/1]
+
+
+Processing JournalentriesController#index (for 127.0.0.1 at 2008-05-27 09:44:22) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlY2I4NWQwZmFiY2IyNzdkNmUyYWJlMzI5MTg5OGM5%0ANTQiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--b702e44f0842336ee936394904ca0a888c52b264
+  Parameters: {"action"=>"index", "controller"=>"journalentries"}
+  [4;35;1mJournalentry Load (0.000000)[0m   [0mSELECT * FROM journalentries [0m
+Rendering template within layouts/journalentries
+Rendering journalentries/index
+Completed in 0.01600 (62 reqs/sec) | Rendering: 0.00000 (0%) | DB: 0.00000 (0%) | 200 OK [http://localhost/journalentries]
+
+
+Processing JournalentriesController#index (for 127.0.0.1 at 2008-05-27 10:11:09) [GET]
+  Session ID: 09bfbe2fa4dcf9af1c143291c9b02a65
+  Parameters: {"action"=>"index", "controller"=>"journalentries"}
+  [4;36;1mJournalentry Load (0.000000)[0m   [0;1mSELECT * FROM journalentries [0m
+Rendering template within layouts/journalentries
+Rendering journalentries/index
+Completed in 0.04700 (21 reqs/sec) | Rendering: 0.03100 (65%) | DB: 0.00000 (0%) | 200 OK [http://localhost/journalentries]
+
+
+Processing JournalentriesController#index (for 127.0.0.1 at 2008-05-27 10:15:01) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlM2JkNDcyNjMzOWJkMjJlMzM5OGQwMzQ5MmVjMzQ0%0AMTciCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--ad88429c3c96db16ec236996292a7b8c7e88a747
+  Parameters: {"action"=>"index", "controller"=>"journalentries"}
+  [4;35;1mJournalentry Load (0.016000)[0m   [0mSELECT * FROM journalentries [0m
+Rendering template within layouts/journalentries
+Rendering journalentries/index
+
+
+ActionView::TemplateError (Called id for nil, which would mistakenly be 4 -- if you really wanted the id of nil, use object_id) on line #3 of journalentries/index.html.erb:
+1: <%= error_messages_for :journalentry %>
+2: 
+3: <% form_for(@journalentry) do |f| %>
+4:   <p>
+5:     <b>Author</b><br />
+6:     <%= f.text_field :author %>
+
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/record_identifier.rb:66:in `dom_id'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_view/helpers/record_identification_helper.rb:16:in `dom_id'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_view/helpers/form_helper.rb:195:in `apply_form_for_options!'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_view/helpers/form_helper.rb:179:in `form_for'
+    app/views/journalentries/index.html.erb:3:in `_run_erb_47app47views47journalentries47index46html46erb'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_view/base.rb:637:in `send'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_view/base.rb:637:in `compile_and_render_template'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_view/base.rb:365:in `render_template'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_view/base.rb:316:in `render_file'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:1100:in `render_for_file'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:858:in `render_with_no_layout'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:872:in `render_with_no_layout'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/layout.rb:262:in `render_without_benchmark'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:51:in `render'
+    c:/ruby/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:51:in `render'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/mime_responds.rb:131:in `send'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/mime_responds.rb:131:in `custom'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/mime_responds.rb:152:in `call'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/mime_responds.rb:152:in `respond'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/mime_responds.rb:150:in `each'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/mime_responds.rb:150:in `respond'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/mime_responds.rb:107:in `respond_to'
+    app/controllers/journalentries_controller.rb:7:in `index'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:1158:in `send'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:1158:in `perform_action_without_filters'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:697:in `call_filters'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:689:in `perform_action_without_benchmark'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    c:/ruby/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/rescue.rb:199:in `perform_action_without_caching'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/caching.rb:678:in `perform_action'
+    c:/ruby/lib/ruby/gems/1.8/gems/activerecord-2.0.2/lib/active_record/connection_adapters/abstract/query_cache.rb:33:in `cache'
+    c:/ruby/lib/ruby/gems/1.8/gems/activerecord-2.0.2/lib/active_record/query_cache.rb:8:in `cache'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/caching.rb:677:in `perform_action'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:524:in `send'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:524:in `process_without_filters'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:685:in `process_without_session_management_support'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/session_management.rb:123:in `process'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:388:in `process'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:171:in `handle_request'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:115:in `dispatch'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:126:in `dispatch_cgi'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:9:in `dispatch'
+    c:/ruby/lib/ruby/gems/1.8/gems/rails-2.0.2/lib/webrick_server.rb:112:in `handle_dispatch'
+    c:/ruby/lib/ruby/gems/1.8/gems/rails-2.0.2/lib/webrick_server.rb:78:in `service'
+    c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    c:/ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    c:/ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    c:/ruby/lib/ruby/gems/1.8/gems/rails-2.0.2/lib/webrick_server.rb:62:in `dispatch'
+    c:/ruby/lib/ruby/gems/1.8/gems/rails-2.0.2/lib/commands/servers/webrick.rb:66
+    c:/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    c:/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    c:/ruby/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:496:in `require'
+    c:/ruby/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    c:/ruby/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:496:in `require'
+    c:/ruby/lib/ruby/gems/1.8/gems/rails-2.0.2/lib/commands/server.rb:39
+    c:/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    c:/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    script/server:3
+
+Rendering c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/templates/rescues/layout.erb (internal_server_error)
+
+
+Processing JournalentriesController#index (for 127.0.0.1 at 2008-05-27 10:16:12) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlM2JkNDcyNjMzOWJkMjJlMzM5OGQwMzQ5MmVjMzQ0%0AMTciCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--ad88429c3c96db16ec236996292a7b8c7e88a747
+  Parameters: {"action"=>"index", "controller"=>"journalentries"}
+  [4;36;1mJournalentry Load (0.000000)[0m   [0;1mSELECT * FROM journalentries [0m
+Rendering template within layouts/journalentries
+Rendering journalentries/index
+Completed in 0.03100 (32 reqs/sec) | Rendering: 0.01600 (51%) | DB: 0.00000 (0%) | 200 OK [http://localhost/journalentries]
+
+
+Processing JournalentriesController#edit (for 127.0.0.1 at 2008-05-27 10:17:21) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlM2JkNDcyNjMzOWJkMjJlMzM5OGQwMzQ5MmVjMzQ0%0AMTciCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--ad88429c3c96db16ec236996292a7b8c7e88a747
+  Parameters: {"action"=>"edit", "id"=>"1", "controller"=>"journalentries"}
+  [4;35;1mJournalentry Load (0.000000)[0m   [0mSELECT * FROM journalentries WHERE (journalentries."id" = 1) [0m
+Rendering template within layouts/journalentries
+Rendering journalentries/edit
+Completed in 0.07800 (12 reqs/sec) | Rendering: 0.01600 (20%) | DB: 0.00000 (0%) | 200 OK [http://localhost/journalentries/1/edit]
+
+
+Processing JournalentriesController#index (for 127.0.0.1 at 2008-05-27 10:17:24) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlM2JkNDcyNjMzOWJkMjJlMzM5OGQwMzQ5MmVjMzQ0%0AMTciCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--ad88429c3c96db16ec236996292a7b8c7e88a747
+  Parameters: {"action"=>"index", "controller"=>"journalentries"}
+  [4;36;1mJournalentry Load (0.000000)[0m   [0;1mSELECT * FROM journalentries [0m
+Rendering template within layouts/journalentries
+Rendering journalentries/index
+Completed in 0.01600 (62 reqs/sec) | Rendering: 0.00000 (0%) | DB: 0.00000 (0%) | 200 OK [http://localhost/journalentries]
+
+
+Processing JournalentriesController#show (for 127.0.0.1 at 2008-05-27 10:17:27) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlM2JkNDcyNjMzOWJkMjJlMzM5OGQwMzQ5MmVjMzQ0%0AMTciCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--ad88429c3c96db16ec236996292a7b8c7e88a747
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"journalentries"}
+  [4;35;1mJournalentry Load (0.000000)[0m   [0mSELECT * FROM journalentries WHERE (journalentries."id" = 1) [0m
+Rendering template within layouts/journalentries
+Rendering journalentries/show
+Completed in 0.03100 (32 reqs/sec) | Rendering: 0.01500 (48%) | DB: 0.00000 (0%) | 200 OK [http://localhost/journalentries/1]
+
+
+Processing JournalentriesController#index (for 127.0.0.1 at 2008-05-27 10:17:29) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlM2JkNDcyNjMzOWJkMjJlMzM5OGQwMzQ5MmVjMzQ0%0AMTciCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--ad88429c3c96db16ec236996292a7b8c7e88a747
+  Parameters: {"action"=>"index", "controller"=>"journalentries"}
+  [4;36;1mJournalentry Load (0.000000)[0m   [0;1mSELECT * FROM journalentries [0m
+Rendering template within layouts/journalentries
+Rendering journalentries/index
+Completed in 0.01600 (62 reqs/sec) | Rendering: 0.00000 (0%) | DB: 0.00000 (0%) | 200 OK [http://localhost/journalentries]

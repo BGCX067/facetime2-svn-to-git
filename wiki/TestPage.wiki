@@ -1,0 +1,12 @@
+#summary Just a test page
+
+= Introduction =
+
+A test page to get the hang of the google code wiki
+
+= Details =
+
+This is a test list
+  * Fishing *is* or _italic_
+  * Headings, paragraphs, and lists
+  * Automatic links to other wiki pages
